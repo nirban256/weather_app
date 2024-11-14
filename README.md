@@ -1,8 +1,14 @@
-# React + Vite
+# Klimatee
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A weather application that provides information regarding daily weather.**
 
-Currently, two official plugins are available:
+## Its main features consists of:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Max and min temparatures
+- Current temparature
+- Temparature throughout the day using graph
+- Wind direction and speed
+- Atmospheric pressure
+- 5 day forecast
+
+### The website is free. Do give it a try.
