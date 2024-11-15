@@ -6,11 +6,15 @@ import { useSearchLocation } from '../hooks/useWeather';
 import { useNavigate } from 'react-router-dom';
 import { useSearchHistory } from '../hooks/useSearchHistory';
 import { format } from "date-fns";
+import { useTheme } from 'next-themes';
 
 const CitySearch = () => {
     const [open, setOpen] = useState(false);
     const [query, setQuery] = useState("");
     const navigate = useNavigate();
+
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
 
     const { data: locations, isLoading } = useSearchLocation(query);
     const { history, clearHistory, addToHistory } = useSearchHistory();
@@ -39,11 +43,10 @@ const CitySearch = () => {
 
             <CommandDialog open={open} onOpenChange={setOpen}>
                 <CommandInput placeholder="Search cities..." value={query} onValueChange={setQuery} />
-                <CommandList>
-                    {query.length > 2 && !isLoading && (<CommandEmpty>No results found.</CommandEmpty>)}
-                    <CommandGroup heading="Favorites">
-                        <CommandItem>Calendar</CommandItem>
-                    </CommandGroup>
+                <CommandList className="scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-400">
+                    {query.length > 2 && !isLoading && (
+                        <CommandEmpty>No results found.</CommandEmpty>
+                    )}
 
                     {history.length > 0 && (
                         <>

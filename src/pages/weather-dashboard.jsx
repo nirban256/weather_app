@@ -9,6 +9,7 @@ import CurrentWeather from '../components/current-weather.jsx';
 import HourlyTemparature from '../components/hourly-temparature.jsx';
 import WeatherDetails from '../components/weather-details.jsx';
 import WeatherForecast from '../components/weather-forecast.jsx';
+import FavoriteCities from '../components/favoriteCities.jsx';
 
 const WeatherDashboard = () => {
     const { coordinates, error: locationError, getLocation, isLoading: locationLoading } = useLocation();
@@ -86,6 +87,7 @@ const WeatherDashboard = () => {
 
     return (
         <div className='space-y-4'>
+            <FavoriteCities />
             <div className="flex items-center justify-between">
                 <h1 className='text-xl font-bold tracking-tight'>
                     My location
