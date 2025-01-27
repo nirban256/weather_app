@@ -12,4 +12,3 @@
 - 5 day forecast
 
 ### The website is free. Do give it a try.
-Going Live soon!
